@@ -5,5 +5,5 @@ fi
 
 for args in "$@"
 do
-        touch "ex$args"
+        mkdir "ex$args"
 done
