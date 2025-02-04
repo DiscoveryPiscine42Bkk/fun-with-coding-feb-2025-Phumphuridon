@@ -1,0 +1,30 @@
+.black {
+    height: 60vh;
+    background-color: black;
+    align-items: flex-end;
+    border: 10px solid black;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 0.25em;
+}
+
+body > .parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    align-items: center;
+    min-height: 120vh;
+    filter: grayscale(1);
+}
+
+body > .parallax:first-child {
+    background-image: url('https://image.petmd.com/files/styles/978x550/public/2024-06/hip-dysplasia-in-dogs.jpg');
+    
+}
+
+body > .parallax:last-child {
+    background-image: url('https://i.imgflip.com/47edxm.jpg?a482784');
+}
