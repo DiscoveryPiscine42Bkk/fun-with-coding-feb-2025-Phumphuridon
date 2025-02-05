@@ -1,0 +1,17 @@
+body {
+    font-family: monospace;
+}
+
+table {
+    text-align: center;
+    border: 1px solid black;
+}
+
+button {
+    border: none;
+    color: white;
+    background-color: black;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
