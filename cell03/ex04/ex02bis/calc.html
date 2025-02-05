@@ -71,9 +71,9 @@
         function calculateResult(){
             let operand1 = numberConversion($("#operand1").val());
             let operand2 = numberConversion($("#operand2").val());
-            let operator = $("#operator").val();
+            let operator = getOperatorFunction($("#operator").val());
             if (validateInput(operand1) && validateInput(operand2)){
-                let result = getOperatorFunction(operator)(operand1, operand2);
+                let result = operator(operand1, operand2);
                 alert(result);
                 console.log(result);
             } else {
