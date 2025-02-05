@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="todo.js"></script>
+    <title>Todo</title>
+</head>
+<body>
+    <center>
+        <h1 style="color: white;">TODO LIST</h1>
+        <button onclick="newToDo()">New</button>
+    </center>
+    <div class="flex-container">
+        <div id="ft_list">
+        </div>
+    </div>
+    <style>
+
+        h1 {
+            color: white;
+            margin-bottom: 0;
+        }
+
+        body {
+            font-family: monospace;
+            background-color: cadetblue;
+        }
+
+        button {
+            border: 1px solid green;
+            background-color: #04AA6D;
+            color: white;
+            padding: 7px 16px;
+            margin: 10px;
+            transition: filter 0.25s;
+        }
+
+        button:hover {
+            filter: brightness(75%);
+        }
+
+        .flex-container {
+            display: flex;
+            width: 100vw;
+            justify-content: center;
+            align-items: end;
+        }
+        
+        #ft_list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column-reverse;
+            width: 50vw;
+            min-height: 10vh;
+            background-color: white;
+            border: 5px solid white;
+        }
+
+        #ft_list > p {
+            width: 100%;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin: 0;
+            background-color: wheat;
+            border: 3px solid cadetblue;
+        }
+    </style>
+</body>
+</html>
