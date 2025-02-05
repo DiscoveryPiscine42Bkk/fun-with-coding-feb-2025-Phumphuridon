@@ -1,0 +1,19 @@
+div {
+    display: flex;
+    width: 100vw;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    border: none;
+    padding: 15px 32px;
+    cursor: pointer;
+    border: 1px solid black;
+    transition: filter 0.25s;
+}
+
+button:hover {
+    filter: brightness(75%);
+}

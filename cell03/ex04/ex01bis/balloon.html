@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        } 
+
+        #balloon {
+            border-radius: 100%;
+        }
+    </style>
+    <div style="width: 200px; height: 200px; background-color: red;" id="balloon"></div>
+    <script>
+
+        $(document).ready(function(){
+            $("#balloon").on("click", balloonClick);
+            $("#balloon").on("mouseleave", balloonLeave);
+        })
+
+        var backgroundColor = ['red', 'green', 'blue']
+        var currentColorIndex = 0;
+
+        function forwardColor(){
+            $("#balloon").css("background-color", backgroundColor[Math.abs(++currentColorIndex%3)]);
+        }
+
+        function reverseColor(){
+            $("#balloon").css("background-color", backgroundColor[Math.abs(--currentColorIndex%3)]);
+        }
+
+        function getBalloonSize(){
+            return $("#balloon").width();
+        }
+
+        function setBalloonSize(size){
+            $("#balloon").css("width", size);
+            $("#balloon").css("height", size);
+        }
+
+        function balloonClick(){
+            setBalloonSize(getBalloonSize()+10);
+            if (getBalloonSize() > 420) {
+                setBalloonSize(200);
+            }
+            forwardColor();
+        }
+
+        function balloonLeave(){
+            setBalloonSize(getBalloonSize()-5);
+            if (getBalloonSize() < 200) {
+                setBalloonSize(200);
+            }
+            reverseColor();
+        }
+    </script>
+</body>
+</html>

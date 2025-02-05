@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="background.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function random8BitColor(){
+            return Math.floor(Math.random() * 255);
+        }
+
+        function changeColor(){
+            let color = `rgb(${random8BitColor()}, ${random8BitColor()}, ${random8BitColor()})`
+
+            $("body").css("background-color", color)
+        }
+
+        $(document).ready(function(){
+            $("button").on("click", changeColor);
+        })
+    </script>
+    <div><button>Click me!</button></div>
+</body>
+</html>
