@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="container">
+            <input type="number" id="operand1" placeholder="Operand">
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="number" id="operand2" placeholder="Operand">
+            <button onclick="calculateResult()">Try Me!</button>
+        </div>
+    </div>
+    <style>
+        body {
+            font-family: monospace;
+        }
+
+        .flex-container {
+            display: flex;
+            height: 95vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: wheat;
+            border-radius: 3%;
+            width: 40vw;
+            height: 20vh;
+        }
+
+        .container > * {
+            padding: 5px;
+        }
+    </style>
+
+    <script>
+        function getOperatorFunction(operator){
+            switch(operator){
+                case "+": return (a, b) => a+b;
+                case "-": return (a, b) => a-b;
+                case "*": return (a, b) => a*b;
+                case "/": return (a, b) => b ? a/b : `It's over 9000!`;
+                case "%": return (a, b) => b ? a%b : `It's over 9000!`;
+            }
+        }
+
+        function validateInput(inp){
+            function isInteger(v){
+                return v === Math.floor(v);
+            }
+            return isInteger(inp) && (inp >= 0);
+        }
+
+        function calculateResult(){
+            let operand1 = Number(document.getElementById("operand1").value);
+            let operand2 = Number(document.getElementById("operand2").value);
+            let operator = document.getElementById("operator").value;
+            if (validateInput(operand1) && validateInput(operand2)){
+                let result = getOperatorFunction(operator)(operand1, operand2);
+                alert(result);
+                console.log(result);
+            } else {
+                alert("Error :(")
+            }
+        }
+
+        setInterval(() => {
+            alert("Please, use me...")
+        }, 30000)
+    </script>
+</body>
+</html>
