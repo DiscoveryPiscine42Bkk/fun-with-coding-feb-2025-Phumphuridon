@@ -33,7 +33,7 @@ function saveToCookie(){
     document.cookie = JSON.stringify({"ft_list" : `${$("#ft_list").html()}`})
 }
 
-$(document).ready(function(){
+window.onload = function(){
     loadFromCookie();
     addListeners();
-})
+}
