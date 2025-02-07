@@ -18,19 +18,14 @@ body {
 
 .blinking-cursor::after {
     content: "|";
-    animation: blink 1s step-start infinite;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: steps(2, start);
+    animation-iteration-count: infinite;
 }
-  
+
 @keyframes blink {
-    0% {
-        content: "|";
-    }
-    50% {
-        content: "";
-    }
-    100% {
-        content: "|";
-    }
+    50% { content: ""; }
 }
 
 
