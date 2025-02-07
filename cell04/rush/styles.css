@@ -16,31 +16,22 @@ body {
     white-space: nowrap;
 }
 
-.blinking-cursor {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .blinking-cursor::after {
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: 100%;
-    background-color: white;
+.blinking-cursor::after {
+    content: "|";
     animation: blink 1s step-start infinite;
-  }
+}
   
-  @keyframes blink {
+@keyframes blink {
     0% {
-      opacity: 1;
+        content: "|";
     }
     50% {
-      opacity: 0;
+        content: "";
     }
     100% {
-      opacity: 1;
+        content: "|";
     }
-  }
+}
 
 
 .nav-bar > a {
